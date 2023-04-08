@@ -43,4 +43,5 @@ const pokemonSlice = createSlice({
   },
 });
 
+export const { toggleFavorite } = pokemonSlice.actions;
 export default pokemonSlice.reducer;
