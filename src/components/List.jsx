@@ -94,25 +94,6 @@ function List() {
           >
             {content}
           </Text>
-          <Text
-            marginTop={"10px"}
-            border={"1px solid #fff"}
-            borderRadius={"7px"}
-            color="#fff"
-            fontFamily={"Start"}
-          >
-            Favoritos:
-          </Text>
-          <Text
-            backgroundColor={"#fff"}
-            opacity="0.8"
-            padding={"2px"}
-            borderRadius={"10px"}
-            fontFamily="PokemonFont"
-            fontWeight={"bold"}
-          >
-            {content}
-          </Text>
         </Box>
       </Box>
     </Box>
