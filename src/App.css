@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@font-face {
+  font-family: PokemonFont;
+  src: url("./assets/fonts/pokemonOutlined.ttf");
+}
+
+@font-face {
+  font-family: Start;
+  src: url("./assets/fonts/Start.otf");
+}
+
+ul {
+  list-style-type: none;
+}
