@@ -6,11 +6,12 @@ import reportWebVitals from "./reportWebVitals";
 
 import App from "./App";
 
-import Home from "./components/Home";
-import List from "./components/List";
+import Home from "@pages/Home";
+import PokemonList from "@pages/PokemonList";
 // import Search from "./pages/Search";
 
 import "./index.css";
+import List from "./components/List";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -18,6 +19,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Routes>
         <Route element={<App />}>
           <Route path="/" element={<Home />} />
+          <Route path="/pokemon-list" element={<PokemonList />} />
           <Route path="/list" element={<List />} />
           {/* <Route path="search" element={<Search />} /> */}
         </Route>

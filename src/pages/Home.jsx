@@ -87,7 +87,7 @@ function Home() {
               height={"100px"}
               margin={"100px 0 50px 350px"}
             ></Img>
-            <Link to={"/list"}>
+            <Link to={"/pokemon-list"}>
               <Text fontSize="3xl" fontFamily="PokemonFont">
                 Iniciar aventura!
               </Text>

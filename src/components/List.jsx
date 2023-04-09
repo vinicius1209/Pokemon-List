@@ -1,7 +1,7 @@
 import { Box, Img, Text } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchPokemon, toggleFavorite } from "../store/pokemonListSlice";
+import { fetchPokemon, toggleFavorite } from "../store/redux/pokemonRedux";
 
 function List() {
   const dispatch = useDispatch();
