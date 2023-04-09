@@ -6,24 +6,20 @@ import { fetchPokemon, toggleFavorite } from "../store/pokemonListSlice";
 function List() {
   const dispatch = useDispatch();
   const pokemon = useSelector((state) => state.pokemon);
-  const favorites = useSelector((state) =>
-    state.pokemon.data.filter((p) => p.isFavorite)
-  );
+  const favorites =
+    useSelector((state) => state.pokemon.data.filter((p) => p.isFavorite)) ||
+    JSON.parse(localStorage.getItem("favorites")) ||
+    [];
 
   useEffect(() => {
     dispatch(fetchPokemon());
   }, [dispatch]);
 
   useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-  }, [favorites]);
-
-  useEffect(() => {
-    const savedFavorites = JSON.parse(localStorage.getItem("favorites"));
-    if (savedFavorites) {
-      dispatch(toggleFavorite(savedFavorites));
+    if (favorites.length > 0) {
+      localStorage.setItem("favorites", JSON.stringify(favorites));
     }
-  }, [dispatch]);
+  }, [favorites]);
 
   const handleFavoriteClick = (pokemon) => {
     dispatch(toggleFavorite(pokemon));
@@ -45,7 +41,7 @@ function List() {
                 marginRight: "10px",
               }}
             >
-              {p.isFavorite ? "X" : "★"}
+              {p.isFavorite ? <span style={{ color: "#EC0000" }}>X</span> : "★"}
             </button>
             {p.isFavorite ? (
               <span style={{ color: "#20a1d8" }}>{p.name}</span>
